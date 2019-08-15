@@ -1,14 +1,15 @@
 { "cSpell.words": [
-    "Hanlon",
-    "msapplication",
-    "navbutton",
-    "navigator",
-    "plugin",
-    "precache",
-    "starturl",
-    "sw",
-    "verdana",
-    "webpack"
-],
+        "Hanlon",
+        "msapplication",
+        "navbutton",
+        "navigator",
+        "plugin",
+        "precache",
+        "shouldbeinenv",
+        "starturl",
+        "sw",
+        "verdana",
+        "webpack"
+    ],
 "eslint.autoFixOnSave": true
 }
