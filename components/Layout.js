@@ -1,23 +1,37 @@
 /* eslint-disable no-unused-vars */
 import Link from "next/link";
 
-const Layout = ( { title, children } ) =>{
+const Layout = ( { title, children, auth } ) =>{
+	const { user = {} } = auth || {};
+	// let { user }={};
+	// if( auth ){
+	// 	user  = auth ;
+	// }
+    
+    
+	console.log( "USER: "+user );
 	return(
 		<div className="root">
 			<nav className="navbar">
-				<span>Welcome, <strong>Guest</strong></span>
+				<span>Welcome, <strong>{user.name||"Guest"}</strong></span>
 				<div>
 					<Link href="/">
 						<a>Home</a>
 					</Link>
-
-					<Link href='/profile'>
-						<a>Profile</a>
-					</Link>
-					<button>Logout</button>
-					<Link href='/login'>
-						<a>Login</a>
-					</Link>
+                   
+					{ user.email? (
+						<React.Fragment>    
+							<Link href='/profile'>
+								<a>Profile</a>
+							</Link>
+							<button>Logout</button>
+						</React.Fragment>
+					): (
+						<Link href='/login'>
+							<a>Login</a>
+						</Link>
+					)
+					}
 				</div>
 			</nav>
 			<h1>{title}</h1>
